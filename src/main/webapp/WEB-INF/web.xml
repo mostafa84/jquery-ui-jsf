@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app version="2.5"
+         xmlns="http://java.sun.com/xml/ns/javaee"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd">
+
+    <display-name>nextweb</display-name>
+
+    <context-param>
+        <param-name>javax.faces.STATE_SAVING_METHOD</param-name>
+        <param-value>server</param-value>
+    </context-param>
+
+    <context-param>
+        <param-name>facelets.PROJECT_STAGE</param-name>
+        <param-value>development</param-value>
+    </context-param>
+
+    <!--<context-param>-->
+        <!--<param-name>facelets.LIBRARIES</param-name>-->
+        <!--<param-value>/WEB-INF/adopt.taglib.xml</param-value>-->
+    <!--</context-param>-->
+
+    <!-- Faces Servlet -->
+    <servlet>
+        <servlet-name>Faces Servlet</servlet-name>
+        <servlet-class>javax.faces.webapp.FacesServlet</servlet-class>
+        <load-on-startup>1</load-on-startup>
+    </servlet>
+
+    <!-- Faces Servlet Mapping -->
+    <servlet-mapping>
+        <servlet-name>Faces Servlet</servlet-name>
+        <url-pattern>*.jsf</url-pattern>
+    </servlet-mapping>
+
+    <security-role>
+        <description>secured-resources</description>
+        <role-name>secured-resources</role-name>
+    </security-role>
+
+    <!--
+        Please note that there are also the following groups:  0/sjs-adm 1/client 2/monitoring
+    -->
+
+    <security-constraint>
+        <web-resource-collection>
+            <web-resource-name>secured-resources</web-resource-name>
+            <url-pattern>*.xhtml</url-pattern>
+        </web-resource-collection>
+        <auth-constraint>
+            <role-name>secured-resources</role-name>
+        </auth-constraint>
+    </security-constraint>
+
+
+</web-app>
