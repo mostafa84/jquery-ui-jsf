@@ -1,0 +1,95 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html
+        xmlns="http://www.w3.org/1999/xhtml"
+        xmlns:h="http://java.sun.com/jsf/html"
+        xmlns:composite="http://java.sun.com/jsf/composite"
+        xmlns:c="http://java.sun.com/jsp/jstl/core"
+        xmlns:ui="http://java.sun.com/jsf/facelets"
+        xmlns:fn="http://java.sun.com/jsp/jstl/functions">
+
+    <composite:interface>
+        <composite:attribute name="title" type="java.lang.String"/>
+        <composite:attribute name="openText" type="java.lang.String"/>
+        <composite:attribute name="closeText" type="java.lang.String"/>
+        <composite:attribute name="openWithLinkInsteadOfButton" type="java.lang.Boolean" default="true"/>
+        <composite:attribute name="closeWithLinkInsteadOfButton" type="java.lang.Boolean" default="true"/>
+
+        <composite:attribute name="modal" required="true" type="java.lang.Boolean" default="false"/>
+        <composite:attribute name="autoOpen" required="true" type="java.lang.Boolean" default="true"/>
+        <composite:attribute name="draggable" required="true" type="java.lang.Boolean" default="false"/>
+        <composite:attribute name="position" type="java.lang.String" default="center"/>
+        <composite:attribute name="width" type="java.lang.Integer"/>
+        <composite:attribute name="height" type="java.lang.Integer"/>
+        <composite:facet name="panel" required="true"/>
+    </composite:interface>
+    <composite:implementation>
+        <h:outputScript library="jquery" name="jquery.min.js" target="head"/>
+        <h:outputScript library="jquery" name="jquery-ui.min.js" target="head"/>
+        <h:outputStylesheet library="jquery" name="ui-lightness.css" target="head"/>
+
+        <script type="text/javascript">
+            $(document).ready(function() {
+                $("##{cc.clientId}:dialog".replace(/:/g,"\\:")).dialog({
+                    modal:#{cc.attrs.modal},
+                    autoOpen:#{cc.attrs.autoOpen},
+                    draggable:#{cc.attrs.draggable},
+                    position:"#{cc.attrs.position}",
+                    width:#{cc.attrs.width},
+                    height:#{cc.attrs.height}
+                });
+            });
+        </script>
+        <c:if test="#{not empty cc.attrs.openText}">
+            <script type="text/javascript">
+                $(document).ready(function() {
+
+                    $("##{cc.clientId}:link".replace(/:/g,"\\:")).click(function() {
+                        $("##{cc.clientId}:dialog".replace(/:/g,"\\:")).dialog("open");
+                        return false;
+                    });
+
+                });
+            </script>
+        </c:if>
+        <c:if test="#{not empty cc.attrs.closeText}">
+            <script type="text/javascript">
+                $(document).ready(function() {
+
+                    $("##{cc.clientId}:close".replace(/:/g,"\\:")).click(function() {
+                        $("##{cc.clientId}:dialog".replace(/:/g,"\\:")).dialog("close");
+                        return false;
+                    });
+
+                });
+            </script>
+        </c:if>
+
+        <div id="#{cc.clientId}:dialog" title="#{cc.attrs.title}">
+            <h:panelGroup>
+                <composite:renderFacet name="panel" required="true"/>
+            </h:panelGroup>
+            <c:if test="#{not empty cc.attrs.closeText}">
+                <c:choose>
+                    <c:when test="#{not cc.attrs.closeWithLinkInsteadOfButton}">
+                        <input id="#{cc.clientId}:close" type="button" value="#{cc.attrs.closeText}"/>
+                    </c:when>
+                    <c:otherwise>
+                        <div><a id="#{cc.clientId}:close" href="#">#{cc.attrs.closeText}</a></div>
+                    </c:otherwise>
+                </c:choose>
+            </c:if>
+        </div>
+        <c:if test="#{not empty cc.attrs.openText}">
+            <c:choose>
+                <c:when test="#{not cc.attrs.openWithLinkInsteadOfButton}">
+                    <input id="#{cc.clientId}:link" type="button" value="#{cc.attrs.openText}"/>
+                </c:when>
+                <c:otherwise>
+                    <a id="#{cc.clientId}:link" href="#">#{cc.attrs.openText}</a>
+                </c:otherwise>
+            </c:choose>
+        </c:if>
+
+    </composite:implementation>
+</html>
