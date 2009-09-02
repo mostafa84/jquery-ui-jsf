@@ -16,7 +16,7 @@
                 <h:outputStylesheet library="jquery" name="ui-lightness.css" target="head"/>
                 <script type="text/javascript">
                     $(function() {
-                        $("#tabs").tabs();
+                        $("#tabs".replace(/:/g,"\\:")).tabs();
                     });
                 </script>
 
