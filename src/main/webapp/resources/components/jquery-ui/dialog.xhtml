@@ -21,7 +21,6 @@
         <composite:attribute name="position" type="java.lang.String" default="center"/>
         <composite:attribute name="width" type="java.lang.Integer"/>
         <composite:attribute name="height" type="java.lang.Integer"/>
-        <composite:facet name="panel" required="true"/>
     </composite:interface>
     <composite:implementation>
         <h:outputScript library="jquery" name="jquery.min.js" target="head"/>
@@ -67,7 +66,7 @@
 
         <div id="#{cc.clientId}:dialog" title="#{cc.attrs.title}">
             <h:panelGroup>
-                <composite:renderFacet name="panel" required="true"/>
+                <composite:insertChildren/>
             </h:panelGroup>
             <c:if test="#{not empty cc.attrs.closeText}">
                 <c:choose>
