@@ -11,7 +11,7 @@ import java.io.IOException;
 import java.util.List;
 
 @FacesRenderer(componentFamily = "javax.faces.Panel", rendererType = "org.jquery.ui.TabsComponent")
-@ResourceDependencies( {
+@ResourceDependencies({
     @ResourceDependency(
         name = "jquery.min.js",
         library = "jquery",
@@ -27,7 +27,7 @@ import java.util.List;
         library = "jquery",
         target = "head"
     )
-} )
+})
 public class TabsRenderer extends Renderer {
 
     /**
@@ -49,21 +49,44 @@ public class TabsRenderer extends Renderer {
     public void encodeBegin(FacesContext context, UIComponent component) throws IOException {
         super.encodeBegin(context, component);
         ResponseWriter writer = context.getResponseWriter();
+
+        //output the javascript script
+        writer.startElement("script", null);
+        writer.writeAttribute("type", "text/javascript", null );
+        String pv = (String)component.getAttributes().get("prependId");
+        boolean prependId = pv==null || pv.trim().length()==0 || "true".equals(pv);
+        String renderId = prependId ? component.getClientId() : component.getId();
+        StringBuilder script = new StringBuilder()
+                .append("$(function() { ").append("$(\"#")
+                .append(renderId).append("\".replace(/:/g,\"\\\\:\")).tabs(); ")
+                .append("});");
+        writer.writeText( script.toString(), null);
+        writer.endElement("script");
+
         writer.startElement("div", component);
         writer.writeAttribute("id", component.getClientId(), "id");
-
+        writer.startElement("ul", null);
         List<UIComponent> children = component.getChildren();
         for (UIComponent child:children) {
             if (child.isRendered()) {
                 writer.startElement("li", null);
                 writer.startElement("a", null);
-                String id = new StringBuilder().append("#").append(child.getClientId()).toString();
-                writer.writeAttribute("href", id, null);
-                String title = (String)component.getAttributes().get("title");
+                String href = (String)child.getAttributes().get("href");
+                if (href!=null && href.trim().length()>0) {
+                    writer.writeAttribute("href", href, null);
+                } else {
+                    Boolean cPrependId = (Boolean)child.getAttributes().get("prependId");
+                    String cRenderId = cPrependId ? child.getClientId() : child.getId();
+                    String id = new StringBuilder().append("#").append(cRenderId).toString();
+                    writer.writeAttribute("href", id, null);
+                }
+                String title = (String)child.getAttributes().get("title");
                 writer.writeText(title, null);
+                writer.endElement("a");
                 writer.endElement("li");
             }
         }
+        writer.endElement("ul");
     }
 
     /**

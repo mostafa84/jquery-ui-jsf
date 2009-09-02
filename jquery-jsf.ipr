@@ -245,7 +245,7 @@
   </component>
   <component name="ProjectFileVersion" converted="true" />
   <component name="ProjectKey">
-    <option name="state" value="project://C:\Projects\experimental-copies\jquery-jsf\jquery-jsf.ipr" />
+    <option name="state" value="https://jquery-ui-jsf.googlecode.com/svn/trunk/jquery-jsf.ipr" />
   </component>
   <component name="ProjectModuleManager">
     <modules>
@@ -284,7 +284,7 @@
     <option name="mySupportsUserInfoFilter" value="true" />
   </component>
   <component name="VcsDirectoryMappings">
-    <mapping directory="" vcs="" />
+    <mapping directory="" vcs="svn" />
   </component>
   <component name="VssConfiguration">
     <option name="CLIENT_PATH" value="" />
@@ -324,68 +324,68 @@
   <component name="libraryTable">
     <library name="Maven: javax.servlet:servlet-api:2.5">
       <CLASSES>
-        <root url="jar://$PROJECT_DIR$/../../../Environment/apache/maven/repository-2.0.9/javax/servlet/servlet-api/2.5/servlet-api-2.5.jar!/" />
+        <root url="jar://$PROJECT_DIR$/../../../Environment/apache/maven/repository-2.2.1/javax/servlet/servlet-api/2.5/servlet-api-2.5.jar!/" />
       </CLASSES>
       <JAVADOC>
-        <root url="jar://$PROJECT_DIR$/../../../Environment/apache/maven/repository-2.0.9/javax/servlet/servlet-api/2.5/servlet-api-2.5-javadoc.jar!/" />
+        <root url="jar://$PROJECT_DIR$/../../../Environment/apache/maven/repository-2.2.1/javax/servlet/servlet-api/2.5/servlet-api-2.5-javadoc.jar!/" />
       </JAVADOC>
       <SOURCES>
-        <root url="jar://$PROJECT_DIR$/../../../Environment/apache/maven/repository-2.0.9/javax/servlet/servlet-api/2.5/servlet-api-2.5-sources.jar!/" />
+        <root url="jar://$PROJECT_DIR$/../../../Environment/apache/maven/repository-2.2.1/javax/servlet/servlet-api/2.5/servlet-api-2.5-sources.jar!/" />
       </SOURCES>
     </library>
     <library name="Maven: javax.servlet.jsp:jsp-api:2.1">
       <CLASSES>
-        <root url="jar://$PROJECT_DIR$/../../../Environment/apache/maven/repository-2.0.9/javax/servlet/jsp/jsp-api/2.1/jsp-api-2.1.jar!/" />
+        <root url="jar://$PROJECT_DIR$/../../../Environment/apache/maven/repository-2.2.1/javax/servlet/jsp/jsp-api/2.1/jsp-api-2.1.jar!/" />
       </CLASSES>
       <JAVADOC>
-        <root url="jar://$PROJECT_DIR$/../../../Environment/apache/maven/repository-2.0.9/javax/servlet/jsp/jsp-api/2.1/jsp-api-2.1-javadoc.jar!/" />
+        <root url="jar://$PROJECT_DIR$/../../../Environment/apache/maven/repository-2.2.1/javax/servlet/jsp/jsp-api/2.1/jsp-api-2.1-javadoc.jar!/" />
       </JAVADOC>
       <SOURCES>
-        <root url="jar://$PROJECT_DIR$/../../../Environment/apache/maven/repository-2.0.9/javax/servlet/jsp/jsp-api/2.1/jsp-api-2.1-sources.jar!/" />
+        <root url="jar://$PROJECT_DIR$/../../../Environment/apache/maven/repository-2.2.1/javax/servlet/jsp/jsp-api/2.1/jsp-api-2.1-sources.jar!/" />
       </SOURCES>
     </library>
     <library name="Maven: javax.el:el-api:1.0">
       <CLASSES>
-        <root url="jar://$PROJECT_DIR$/../../../Environment/apache/maven/repository-2.0.9/javax/el/el-api/1.0/el-api-1.0.jar!/" />
+        <root url="jar://$PROJECT_DIR$/../../../Environment/apache/maven/repository-2.2.1/javax/el/el-api/1.0/el-api-1.0.jar!/" />
       </CLASSES>
       <JAVADOC>
-        <root url="jar://$PROJECT_DIR$/../../../Environment/apache/maven/repository-2.0.9/javax/el/el-api/1.0/el-api-1.0-javadoc.jar!/" />
+        <root url="jar://$PROJECT_DIR$/../../../Environment/apache/maven/repository-2.2.1/javax/el/el-api/1.0/el-api-1.0-javadoc.jar!/" />
       </JAVADOC>
       <SOURCES>
-        <root url="jar://$PROJECT_DIR$/../../../Environment/apache/maven/repository-2.0.9/javax/el/el-api/1.0/el-api-1.0-sources.jar!/" />
+        <root url="jar://$PROJECT_DIR$/../../../Environment/apache/maven/repository-2.2.1/javax/el/el-api/1.0/el-api-1.0-sources.jar!/" />
       </SOURCES>
     </library>
     <library name="Maven: jstl:jstl:1.2">
       <CLASSES>
-        <root url="jar://$PROJECT_DIR$/../../../Environment/apache/maven/repository-2.0.9/jstl/jstl/1.2/jstl-1.2.jar!/" />
+        <root url="jar://$PROJECT_DIR$/../../../Environment/apache/maven/repository-2.2.1/jstl/jstl/1.2/jstl-1.2.jar!/" />
       </CLASSES>
       <JAVADOC>
-        <root url="jar://$PROJECT_DIR$/../../../Environment/apache/maven/repository-2.0.9/jstl/jstl/1.2/jstl-1.2-javadoc.jar!/" />
+        <root url="jar://$PROJECT_DIR$/../../../Environment/apache/maven/repository-2.2.1/jstl/jstl/1.2/jstl-1.2-javadoc.jar!/" />
       </JAVADOC>
       <SOURCES>
-        <root url="jar://$PROJECT_DIR$/../../../Environment/apache/maven/repository-2.0.9/jstl/jstl/1.2/jstl-1.2-sources.jar!/" />
+        <root url="jar://$PROJECT_DIR$/../../../Environment/apache/maven/repository-2.2.1/jstl/jstl/1.2/jstl-1.2-sources.jar!/" />
       </SOURCES>
     </library>
     <library name="Maven: com.sun.faces:jsf-api:2.0.0-b17">
       <CLASSES>
-        <root url="jar://$PROJECT_DIR$/../../../Environment/apache/maven/repository-2.0.9/com/sun/faces/jsf-api/2.0.0-b17/jsf-api-2.0.0-b17.jar!/" />
+        <root url="jar://$PROJECT_DIR$/../../../Environment/apache/maven/repository-2.2.1/com/sun/faces/jsf-api/2.0.0-b17/jsf-api-2.0.0-b17.jar!/" />
       </CLASSES>
       <JAVADOC>
-        <root url="jar://$PROJECT_DIR$/../../../Environment/apache/maven/repository-2.0.9/com/sun/faces/jsf-api/2.0.0-b17/jsf-api-2.0.0-b17-javadoc.jar!/" />
+        <root url="jar://$PROJECT_DIR$/../../../Environment/apache/maven/repository-2.2.1/com/sun/faces/jsf-api/2.0.0-b17/jsf-api-2.0.0-b17-javadoc.jar!/" />
       </JAVADOC>
       <SOURCES>
-        <root url="jar://$PROJECT_DIR$/../../../Environment/apache/maven/repository-2.0.9/com/sun/faces/jsf-api/2.0.0-b17/jsf-api-2.0.0-b17-sources.jar!/" />
+        <root url="jar://$PROJECT_DIR$/../../../Environment/apache/maven/repository-2.2.1/com/sun/faces/jsf-api/2.0.0-b17/jsf-api-2.0.0-b17-sources.jar!/" />
       </SOURCES>
     </library>
     <library name="Maven: com.sun.faces:jsf-impl:2.0.0-b17">
       <CLASSES>
-        <root url="jar://$PROJECT_DIR$/../../../Environment/apache/maven/repository-2.0.9/com/sun/faces/jsf-impl/2.0.0-b17/jsf-impl-2.0.0-b17.jar!/" />
+        <root url="jar://$PROJECT_DIR$/../../../Environment/apache/maven/repository-2.2.1/com/sun/faces/jsf-impl/2.0.0-b17/jsf-impl-2.0.0-b17.jar!/" />
       </CLASSES>
       <JAVADOC>
-        <root url="jar://$PROJECT_DIR$/../../../Environment/apache/maven/repository-2.0.9/com/sun/faces/jsf-impl/2.0.0-b17/jsf-impl-2.0.0-b17-javadoc.jar!/" />
+        <root url="jar://$PROJECT_DIR$/../../../Environment/apache/maven/repository-2.2.1/com/sun/faces/jsf-impl/2.0.0-b17/jsf-impl-2.0.0-b17-javadoc.jar!/" />
       </JAVADOC>
       <SOURCES>
-        <root url="jar://$PROJECT_DIR$/../../../Environment/apache/maven/repository-2.0.9/com/sun/faces/jsf-impl/2.0.0-b17/jsf-impl-2.0.0-b17-sources.jar!/" />
+        <root url="jar://$PROJECT_DIR$/../../../Environment/apache/maven/repository-2.2.1/com/sun/faces/jsf-impl/2.0.0-b17/jsf-impl-2.0.0-b17-sources.jar!/" />
       </SOURCES>
     </library>
   </component>

@@ -10,10 +10,14 @@
 
     <composite:interface>
         <composite:attribute name="title" type="java.lang.String"/>
+        <composite:attribute name="href" type="java.lang.String"/>
+        <composite:attribute name="prependId" type="java.lang.Boolean" default="true"/>
     </composite:interface>
     <composite:implementation>
-        <div id="#{cc.clientId}">
-            <composite:insertChildren/>
-        </div>
+        <c:if test="#{empty cc.attrs.href}">
+            <div id="#{cc.attrs.prependId ? cc.clientId : cc.id}">
+                <composite:insertChildren/>
+            </div>
+        </c:if>
     </composite:implementation>
 </html>
