@@ -1,0 +1,32 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:ui="http://java.sun.com/jsf/facelets"      
+      xmlns:jquery-ui="http://java.sun.com/jsf/composite/components/jquery-ui"
+      xmlns:jquery-c="http://ui.jquery.org/jsf">
+    <h:head>
+        <title>jQuery Example</title>
+    </h:head>
+    <body>
+        <f:view>
+            <h:form>
+                <jquery-ui:dialog
+                        title="My Modal Panel"
+                        width="200"
+                        height="200"
+                        autoOpen="false"
+                        modal="true"
+                        draggable="true"
+                        openText="Please Open Me..."
+                        closeText="Please Close Me..."
+                        position="bottom"
+                        openWithLinkInsteadOfButton="false">
+                    Yeah, this is how it works now.
+                </jquery-ui:dialog>
+            </h:form>
+        </f:view>
+        <ui:debug rendered="true"/>
+    </body>
+</html>
