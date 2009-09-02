@@ -1,5 +1,3 @@
-#To Do List
-
 = To Do List =
 
 Below are a set of items that I would like to do for this project.
