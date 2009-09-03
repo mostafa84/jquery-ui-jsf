@@ -19,12 +19,11 @@ import java.util.List;
     ),
     @ResourceDependency(
         name = "jquery-ui.min.js",
-        library = "jquery",
+        library = "jquery-ui",
         target = "head"
     ),
     @ResourceDependency(
-        name = "ui-lightness.css",
-        library = "jquery",
+        name = "jquery-ui/1_7_2/#{cc.attrs.theme}/theme.css",
         target = "head"
     )
 })
