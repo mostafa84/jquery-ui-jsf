@@ -4,7 +4,7 @@
       xmlns:h="http://java.sun.com/jsf/html"
       xmlns:f="http://java.sun.com/jsf/core"
       xmlns:ui="http://java.sun.com/jsf/facelets"
-      xmlns:jquery-ui="http://java.sun.com/jsf/composite/components/jquery-ui">
+      xmlns:jquery-ui="http://java.sun.com/jsf/composite/components/jquery-ui-jsf">
     <h:head>
         <title>jQuery Example</title>
     </h:head>
@@ -13,7 +13,7 @@
             <h:form>
                 <h:outputScript library="jquery" name="jquery.min.js" target="head"/>
                 <h:outputScript library="jquery" name="jquery-ui.min.js" target="head"/>
-                <h:outputStylesheet library="jquery" name="ui-lightness.css" target="head"/>
+                <h:outputStylesheet name="jquery-ui/1_7_2/ui-lightness/theme.css" target="head"/>
                 <script type="text/javascript">
                     $(function() {
                         $("#tabs".replace(/:/g,"\\:")).tabs();

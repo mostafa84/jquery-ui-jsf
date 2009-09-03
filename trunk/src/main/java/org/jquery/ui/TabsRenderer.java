@@ -5,28 +5,10 @@ import javax.faces.render.Renderer;
 import javax.faces.context.FacesContext;
 import javax.faces.context.ResponseWriter;
 import javax.faces.component.UIComponent;
-import javax.faces.application.ResourceDependencies;
-import javax.faces.application.ResourceDependency;
 import java.io.IOException;
 import java.util.List;
 
 @FacesRenderer(componentFamily = "javax.faces.Panel", rendererType = "org.jquery.ui.TabsComponent")
-@ResourceDependencies({
-    @ResourceDependency(
-        name = "jquery.min.js",
-        library = "jquery",
-        target = "head"
-    ),
-    @ResourceDependency(
-        name = "jquery-ui.min.js",
-        library = "jquery-ui",
-        target = "head"
-    ),
-    @ResourceDependency(
-        name = "jquery-ui/1_7_2/#{cc.attrs.theme}/theme.css",
-        target = "head"
-    )
-})
 public class TabsRenderer extends Renderer {
 
     /**
@@ -52,8 +34,7 @@ public class TabsRenderer extends Renderer {
         //output the javascript script
         writer.startElement("script", null);
         writer.writeAttribute("type", "text/javascript", null );
-        String pv = (String)component.getAttributes().get("prependId");
-        boolean prependId = pv==null || pv.trim().length()==0 || "true".equals(pv);
+        Boolean prependId = (Boolean)component.getAttributes().get("prependId");
         String renderId = prependId ? component.getClientId() : component.getId();
         StringBuilder script = new StringBuilder()
                 .append("$(function() { ").append("$(\"#")

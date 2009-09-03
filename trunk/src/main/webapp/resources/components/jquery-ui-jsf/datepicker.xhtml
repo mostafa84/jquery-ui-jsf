@@ -11,6 +11,7 @@
     <composite:interface>
         <composite:editableValueHolder name="datepicker"/>
         <composite:attribute name="valueChangeListener" targets="datepicker" />
+        <composite:attribute name="theme" type="java.lang.String" default="ui-lightness"/>
     </composite:interface>
     <composite:implementation>
         <h:outputScript library="jquery" name="jquery.min.js" target="head"/>
