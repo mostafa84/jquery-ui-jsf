@@ -12,6 +12,7 @@
     <body>
         <f:view>
             <h:form>
+                <h3>Dialog</h3>
                 <jquery-ui:dialog
                         title="My Modal Panel"
                         width="300"
@@ -22,11 +23,11 @@
                         openText="Please Open Me..."
                         closeText="Please Close Me..."
                         openWithLinkInsteadOfButton="false">
-                    <f:facet name="panel">
                         Hi there.
-                    </f:facet>
                 </jquery-ui:dialog>
-
+                <h3>Date Picker</h3>
+                <jquery-ui:datepicker/>
+                <h3>Tabs</h3>
                 <jquery-c:tabs id="mytabs" prependId="true">
                     <jquery-ui:tab id="t1" title="Tab One" prependId="false">
                         <p>Proin elit arcu, rutrum commodo, vehicula tempus, commodo a, risus. Curabitur nec arcu. Donec sollicitudin mi sit amet mauris. Nam elementum quam ullamcorper ante. Etiam aliquet massa et lorem. Mauris dapibus lacus auctor risus. Aenean tempor ullamcorper leo. Vivamus sed magna quis ligula eleifend adipiscing. Duis orci. Aliquam sodales tortor vitae ipsum. Aliquam nulla. Duis aliquam molestie erat. Ut et mauris vel pede varius sollicitudin. Sed ut dolor nec orci tincidunt interdum. Phasellus ipsum. Nunc tristique tempus lectus.</p>
@@ -39,8 +40,8 @@
                         <p>Duis cursus. Maecenas ligula eros, blandit nec, pharetra at, semper at, magna. Nullam ac lacus. Nulla facilisi. Praesent viverra justo vitae neque. Praesent blandit adipiscing velit. Suspendisse potenti. Donec mattis, pede vel pharetra blandit, magna ligula faucibus eros, id euismod lacus dolor eget odio. Nam scelerisque. Donec non libero sed nulla mattis commodo. Ut sagittis. Donec nisi lectus, feugiat porttitor, tempor ac, tempor vitae, pede. Aenean vehicula velit eu tellus interdum rutrum. Maecenas commodo. Pellentesque nec elit. Fusce in lacus. Vivamus a libero vitae lectus hendrerit hendrerit.</p>
                     </jquery-ui:tab>
                 </jquery-c:tabs>
-
-                <jquery-ui:accordion id="mytabs" prependId="true">
+                <h3>Accordion</h3>
+                <jquery-ui:accordion id="myaccordion" prependId="true">
                     <jquery-ui:accordion-part id="a1" title="Accordion One">
                         <p>Proin elit arcu, rutrum commodo, vehicula tempus, commodo a, risus. Curabitur nec arcu. Donec sollicitudin mi sit amet mauris. Nam elementum quam ullamcorper ante. Etiam aliquet massa et lorem. Mauris dapibus lacus auctor risus. Aenean tempor ullamcorper leo. Vivamus sed magna quis ligula eleifend adipiscing. Duis orci. Aliquam sodales tortor vitae ipsum. Aliquam nulla. Duis aliquam molestie erat. Ut et mauris vel pede varius sollicitudin. Sed ut dolor nec orci tincidunt interdum. Phasellus ipsum. Nunc tristique tempus lectus.</p>
                     </jquery-ui:accordion-part>
