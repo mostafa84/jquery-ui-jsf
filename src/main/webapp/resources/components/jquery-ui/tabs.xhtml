@@ -22,10 +22,11 @@
             });
         </script>
         <div id="#{cc.clientId}">
-            <c:forEach items="#{cc.children}" var="child">
-                <li><a href="##{child.clientId}">#{child.attrs.title}</a></li>
-            </c:forEach>
-
+            <ul>
+                <c:forEach items="#{cc.children}" var="child">
+                    <li><a href="##{child.clientId}">#{child.attrs.title}Broken For Each</a></li>
+                </c:forEach>
+            </ul>
             <composite:insertChildren/>
         </div>
     </composite:implementation>

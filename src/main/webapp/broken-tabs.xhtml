@@ -1,0 +1,31 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:ui="http://java.sun.com/jsf/facelets"      
+      xmlns:jquery-ui="http://java.sun.com/jsf/composite/components/jquery-ui"
+      xmlns:jquery-c="http://ui.jquery.org/jsf">
+    <h:head>
+        <title>jQuery Broken Tab Example</title>
+    </h:head>
+    <body>
+        <f:view>
+            <h:form prependId="false">
+                <h3>Broken Tab</h3>
+                <jquery-ui:tabs id="mytabsBrokenTab" prependId="false">
+                    <jquery-ui:tab id="b1" title="Tab One" prependId="false">
+                        <p>In This example, the composite component does cannot utilize the EL for the assigned variable in the forEach loop.  Although the EL understands that there are three children, none of the values in the child can be accessed.</p>
+                    </jquery-ui:tab>
+                    <jquery-ui:tab id="b2" title="Tab Two" prependId="false">
+                        <p>For a composite component such as tabs panel, it is important for the parent to inspect its children components with EL and JSTL.</p>
+                    </jquery-ui:tab>
+                    <jquery-ui:tab id="b3" title="Tab Three" prependId="false">
+                        <p>Please fix this problem.  This does work if I use a Renderer and UIComponent.  But then I must mix-match different tag namespaces.</p>
+                    </jquery-ui:tab>
+                </jquery-ui:tabs>
+            </h:form>
+        </f:view>
+        <ui:debug rendered="true"/>
+    </body>
+</html>
