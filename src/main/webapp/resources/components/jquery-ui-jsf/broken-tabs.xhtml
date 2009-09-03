@@ -9,6 +9,7 @@
         xmlns:fn="http://java.sun.com/jsp/jstl/functions">
 
     <composite:interface>
+        <composite:attribute name="prependId" type="java.lang.Boolean" default="true"/>
         <composite:attribute name="theme" type="java.lang.String" default="ui-lightness"/>
     </composite:interface>
     <composite:implementation>
@@ -18,12 +19,17 @@
         <script type="text/javascript">
             $(document).ready(function() {
                 $(function() {
-                    $("##{cc.clientId}".replace(/:/g,"\\:")).accordion();
+                    $("##{cc.clientId}".replace(/:/g,"\\:")).tabs();
                 });
             });
         </script>
         <div id="#{cc.clientId}">
+            <ul>
+                <c:forEach items="#{cc.children}" var="child">
+                    <li><a href="##{child.clientId}">#{child.attrs.title}Broken For Each</a></li>
+                </c:forEach>
+            </ul>
             <composite:insertChildren/>
-        </div>        
+        </div>
     </composite:implementation>
 </html>

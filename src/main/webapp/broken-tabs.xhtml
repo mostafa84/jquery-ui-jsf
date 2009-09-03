@@ -4,7 +4,7 @@
       xmlns:h="http://java.sun.com/jsf/html"
       xmlns:f="http://java.sun.com/jsf/core"
       xmlns:ui="http://java.sun.com/jsf/facelets"      
-      xmlns:jquery-ui="http://java.sun.com/jsf/composite/components/jquery-ui"
+      xmlns:jquery-ui="http://java.sun.com/jsf/composite/components/jquery-ui-jsf"
       xmlns:jquery-c="http://ui.jquery.org/jsf">
     <h:head>
         <title>jQuery Broken Tab Example</title>
@@ -13,7 +13,7 @@
         <f:view>
             <h:form prependId="false">
                 <h3>Broken Tab</h3>
-                <jquery-ui:tabs id="mytabsBrokenTab" prependId="false">
+                <jquery-ui:broken-tabs id="mytabsBrokenTab" prependId="false">
                     <jquery-ui:tab id="b1" title="Tab One" prependId="false">
                         <p>In This example, the composite component does cannot utilize the EL for the assigned variable in the forEach loop.  Although the EL understands that there are three children, none of the values in the child can be accessed.</p>
                     </jquery-ui:tab>
@@ -23,7 +23,7 @@
                     <jquery-ui:tab id="b3" title="Tab Three" prependId="false">
                         <p>Please fix this problem.  This does work if I use a Renderer and UIComponent.  But then I must mix-match different tag namespaces.</p>
                     </jquery-ui:tab>
-                </jquery-ui:tabs>
+                </jquery-ui:broken-tabs>
             </h:form>
         </f:view>
         <ui:debug rendered="true"/>
