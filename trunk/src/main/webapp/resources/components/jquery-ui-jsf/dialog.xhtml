@@ -7,14 +7,12 @@
         xmlns:c="http://java.sun.com/jsp/jstl/core"
         xmlns:ui="http://java.sun.com/jsf/facelets"
         xmlns:fn="http://java.sun.com/jsp/jstl/functions">
-
     <composite:interface>
         <composite:attribute name="title" type="java.lang.String"/>
         <composite:attribute name="theme" type="java.lang.String" default="ui-lightness"/>
         <composite:attribute name="openText" type="java.lang.String"/>
         <composite:attribute name="closeText" type="java.lang.String"/>
         <composite:attribute name="openWithLinkInsteadOfButton" type="java.lang.Boolean" default="true"/>
-        <composite:attribute name="closeWithLinkInsteadOfButton" type="java.lang.Boolean" default="true"/>
 
         <composite:attribute name="modal" required="true" type="java.lang.Boolean" default="false"/>
         <composite:attribute name="autoOpen" required="true" type="java.lang.Boolean" default="true"/>
@@ -34,7 +32,6 @@
                 <h:outputStylesheet name="jquery-ui/1_7_2/#{cc.attrs.theme}/theme.css" target="head"/>
             </c:otherwise>
         </c:choose>
-
         <script type="text/javascript">
             $(document).ready(function() {
                 $("##{cc.clientId}:dialog".replace(/:/g,"\\:")).dialog({
@@ -43,60 +40,37 @@
                     draggable:#{cc.attrs.draggable},
                     position:"#{cc.attrs.position}",
                     width:#{cc.attrs.width},
-                    height:#{cc.attrs.height}
+                    height:#{cc.attrs.height},
+                    <c:if test="#{not empty cc.attrs.closeText}">
+                    buttons: {
+                        "#{cc.attrs.closeText}": function() {
+                            $(this).dialog("close");
+                        }
+                    }
+                    </c:if>
                 });
+                <c:if test="#{not empty cc.attrs.openText}">
+                $("##{cc.clientId}:link".replace(/:/g,"\\:")).click(function() {
+                    $("##{cc.clientId}:dialog".replace(/:/g,"\\:")).dialog("open");
+                    return false;
+                });
+                </c:if>
             });
         </script>
-        <c:if test="#{not empty cc.attrs.openText}">
-            <script type="text/javascript">
-                $(document).ready(function() {
-
-                    $("##{cc.clientId}:link".replace(/:/g,"\\:")).click(function() {
-                        $("##{cc.clientId}:dialog".replace(/:/g,"\\:")).dialog("open");
-                        return false;
-                    });
-
-                });
-            </script>
-        </c:if>
-        <c:if test="#{not empty cc.attrs.closeText}">
-            <script type="text/javascript">
-                $(document).ready(function() {
-
-                    $("##{cc.clientId}:close".replace(/:/g,"\\:")).click(function() {
-                        $("##{cc.clientId}:dialog".replace(/:/g,"\\:")).dialog("close");
-                        return false;
-                    });
-
-                });
-            </script>
-        </c:if>
-
         <div id="#{cc.clientId}:dialog" title="#{cc.attrs.title}">
             <h:panelGroup>
                 <composite:insertChildren/>
             </h:panelGroup>
-            <c:if test="#{not empty cc.attrs.closeText}">
-                <c:choose>
-                    <c:when test="#{not cc.attrs.closeWithLinkInsteadOfButton}">
-                        <input id="#{cc.clientId}:close" type="button" value="#{cc.attrs.closeText}"/>
-                    </c:when>
-                    <c:otherwise>
-                        <div><a id="#{cc.clientId}:close" href="#">#{cc.attrs.closeText}</a></div>
-                    </c:otherwise>
-                </c:choose>
-            </c:if>
         </div>
         <c:if test="#{not empty cc.attrs.openText}">
             <c:choose>
                 <c:when test="#{not cc.attrs.openWithLinkInsteadOfButton}">
-                    <input id="#{cc.clientId}:link" type="button" value="#{cc.attrs.openText}"/>
+                    <input id="#{cc.clientId}:link" type="button" value="#{cc.attrs.openText}" class="ui-button ui-state-default ui-corner-all"/>
                 </c:when>
                 <c:otherwise>
                     <a id="#{cc.clientId}:link" href="#">#{cc.attrs.openText}</a>
                 </c:otherwise>
             </c:choose>
         </c:if>
-
     </composite:implementation>
 </html>
