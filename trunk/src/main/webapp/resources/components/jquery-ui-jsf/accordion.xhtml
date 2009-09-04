@@ -14,7 +14,15 @@
     <composite:implementation>
         <h:outputScript library="jquery" name="jquery.min.js" target="head"/>
         <h:outputScript library="jquery-ui" name="jquery-ui.min.js" target="head"/>
-        <h:outputStylesheet name="jquery-ui/1_7_2/#{cc.attrs.theme}/theme.css" target="head"/>
+        <c:choose>
+            <c:when test="#{not empty jqueryThemeManager and not empty jqueryThemeManager.theme}">
+                <h:outputStylesheet name="jquery-ui/1_7_2/#{jqueryThemeManager.theme}/theme.css" target="head"/>
+            </c:when>
+            <c:otherwise>
+                <h:outputStylesheet name="jquery-ui/1_7_2/#{cc.attrs.theme}/theme.css" target="head"/>
+            </c:otherwise>
+        </c:choose>
+
         <script type="text/javascript">
             $(document).ready(function() {
                 $(function() {
@@ -25,5 +33,5 @@
         <div id="#{cc.clientId}">
             <composite:insertChildren/>
         </div>        
-    </composite:implementation>
+    </composite:implementation> 
 </html>
