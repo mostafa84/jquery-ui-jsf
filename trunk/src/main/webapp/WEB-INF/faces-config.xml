@@ -10,7 +10,7 @@
         <managed-bean-scope>session</managed-bean-scope>
         <managed-property>
             <property-name>theme</property-name>
-            <value>smoothness</value>
+            <value>ui-lightness</value>
         </managed-property>
     </managed-bean>
 
