@@ -1,0 +1,1 @@
+This project provides JSF 2.0 components that use the jQuery UI component framework.
